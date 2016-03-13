@@ -1,0 +1,7 @@
+name: OneManSleep
+main: dk.jacobhinze.onemansleep.Main
+version: 1.0
+
+permissions:
+   onemansleep.use:
+      description: Give permission to use the plugin
