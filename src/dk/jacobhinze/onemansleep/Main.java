@@ -23,21 +23,19 @@ public class Main extends JavaPlugin implements Listener{
 		Player p = e.getPlayer();
 		Location loc = p.getLocation();
 		World world = loc.getWorld();
-		if(p.hasPermission("OneManSleep.use")){
-			new BukkitRunnable(){
-				private int countdown = 2;
-				@Override
-				public void run(){
-						countdown--;
-						
-						if(countdown == 0){
-							cancel();
-							world.setTime(0);
-							e.setCancelled(true);
-						}
+		new BukkitRunnable(){
+			private int countdown = 2;
+			@Override
+			public void run(){
+					countdown--;
+					
+					if(countdown == 0){
+						cancel();
+						world.setTime(0);
+						e.setCancelled(true);
 					}
-				}.runTaskTimer(this, 20L, 20L);
-		}
+				}
+			}.runTaskTimer(this, 20L, 20L);
 	}
 
 }
